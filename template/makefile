@@ -6,3 +6,5 @@ SUBJECT = $(lastword $(subst /, , $(CURDIR)))
 
 notes: $(SUBJECT).tex
 	pdflatex SUBJECT
+clean:
+	rm *.aux *.log

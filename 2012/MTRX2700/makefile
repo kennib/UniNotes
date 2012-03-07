@@ -2,7 +2,9 @@
 # To create pdf of notes from latex files
 
 # Get subject from directory
-MTRX2700 = $(lastword $(subst /, , $(CURDIR)))
+SUBJECT = $(lastword $(subst /, , $(CURDIR)))
 
-notes: $(MTRX2700).tex
-	pdflatex MTRX2700
+notes: $(SUBJECT).tex
+	pdflatex SUBJECT
+clean:
+	rm *.aux *.log
