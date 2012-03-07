@@ -2,7 +2,9 @@
 # To create pdf of notes from latex files
 
 # Get subject from directory
-INFO3220 = $(lastword $(subst /, , $(CURDIR)))
+SUBJECT = $(lastword $(subst /, , $(CURDIR)))
 
-notes: $(INFO3220).tex
-	pdflatex INFO3220
+notes: $(SUBJECT).tex
+	pdflatex SUBJECT
+clean:
+	rm *.aux *.log
