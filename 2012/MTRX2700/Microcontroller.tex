@@ -30,3 +30,66 @@
 				\item Logic governed by MicroPrograms, small sets of instruction built into the CPU
 			\end{itemize}
 		
+		\subsubsection{Instruction Decoder}
+			\begin{itemize}
+				\item Receives opcodes and interprets them
+				\item Uses MicroPrograms to tell the ALU what actions to perform
+			\end{itemize}
+		
+		\subsubsection{ALU}
+			\begin{itemize}
+				\item The Arithmetic Logic Unit carries out logic and logic operations on the operands
+				\item 68HC11 has support for addition, subtraction, multiplication and division commands
+			\end{itemize}
+		
+		\subsubsection{Address Bus}
+			\begin{itemize}
+				\item A bus is a topology or circuit in which all devices are directly connected to a line
+and signals pass through all the devices. Each device has a unique identity so it can recognise the signals intended for it.
+				\item The address bus of the 68HC11 is 16 parallel wires attached to a number of devices including:
+CPU, internal and external memory etc.
+			\end{itemize}
+		
+		\subsubsection{Data Bus}
+			\begin{itemize}
+				\item In the 68HC11 the Databus is an 8 bit bus which data can be sent along
+				\item Used with the Address Bus. Address bus identifies the location to send or receive data.
+The Data bus carries the data to be sent or received.
+			\end{itemize}
+		
+		\subsubsection{CPU Registers}
+			\begin{itemize}
+			\item{Accumulators}
+				\begin{itemize}
+					\item Where the results from arithmetic operations are stored
+					\item There are two 8-bit accumulators (A and B) in the 68HC11.
+They can be combined to create a third 16-bit register (D).
+				\end{itemize}
+
+			\item{Index Registers}
+				\begin{itemize}
+					\item Used to point to locations in memory
+					\item Can also be use for temporary data storage and arithmetic operations too
+					\item Two 16-bit registers (X and Y) on the 68HC11
+				\end{itemize}
+			
+			\item{Program Counter}
+				\begin{itemize}
+					\item Stores the location of the next instruction to be executed
+					\item 16-bit register on the 68HC11
+				\end{itemize}
+			
+			\item{Stack Pointer}
+				\begin{itemize}
+					\item Points to the top of the memory stack
+					\item 16-bit register on 68HC11
+				\end{itemize}
+
+			\item{Condition Code Register}
+				\begin{itemize}
+					\item Used to record the result of some arithmetic operations
+					\item 8-bit register on 68HC11
+				\end{itemize}
+			\end{itemize}
+
+
