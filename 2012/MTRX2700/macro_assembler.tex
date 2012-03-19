@@ -1,0 +1,31 @@
+\section{Macro Assembler}
+	A program that translates the assembly laguage macros into machine code.
+	\subsection{Commands}
+		\subsubsection{Comments}
+			LDAA \#\$5C This is a comment
+		\subsubsection{Labels}
+			The assembler has the facility to generate sybomlic labels during assembly. \\
+			Label begins in the first column of the text file and can optionally end in a colon
+		\subsubsection{Arithmetic Expressions}
+			\begin{description}
+				\item[addition] +
+				\item[subtraction] -
+				\item[multiplication] *
+				\item[division] \
+				\item[bitwise and] \&
+				\item[bitwise or] $|$
+				\item[bitwise xor] 
+			\end{description}
+		\subsubsection{Constants}
+			Hexadecimal \$\\
+			Binary \%\\
+			Character '
+		\subsubsection{Psuedo-Ops}
+			ORG - Origin specifies the location in the memory for the assembler for the following machine code. \\
+			ORG \$8800 Start of memory block \\
+			EQU  - Equate a symbol to to a numeric values. \\
+			PortA EQU \$1000 \\
+			FCC - Form constant character, forms a string of ascii characters in memory. \\
+			FCC "Hello World" \\
+			FCB - Form Constant Byte \\
+			FDB - Form Double Byte \\
