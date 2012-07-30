@@ -1,0 +1,18 @@
+\section{Interrupts}
+	Interrupts call interrupt service routines.
+	Interupts save the current state, run the interupt service routine then restore the previous processor state.
+
+	\subsection{Interrupt Vectors}
+		There is predefined area in memory which can be used to reference where interrupt routines are for each interrupt source.
+	
+	\subsection{Interrupt Execution}
+		Before an interrupt routine is called all CPU registers are saved.
+		At the end of an interrupt service routine an RTI instruction should be used to restore the CPU registers to their previous states.
+
+	\subsection{Interrupt Priority}
+		Interrupts have predefined priorities used to determine the precedence of different interrupt sources.
+		The Interrupts are queued and are executed as soon as the previous ISR is completed.
+
+	\subsection{Interrupt Masking}
+		Interrupts each have a mask bit that can be set in order to ignore the interrupt.
+		A mask value of 0 tells the CPU to ignore the interrupt and 1 to call the ISR when the interrupt occurs.

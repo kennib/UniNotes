@@ -5,6 +5,6 @@
 SUBJECT = $(lastword $(subst /, , $(CURDIR)))
 
 notes: $(SUBJECT).tex
-	pdflatex SUBJECT
+	pdflatex $(SUBJECT)
 clean:
 	rm *.aux *.log
