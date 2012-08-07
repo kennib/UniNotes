@@ -29,7 +29,7 @@ Notations:
 
  - $deg(u)$ = number of edges connected to the vertex $u$
  - $deg(G)$ = the maximum degree of $deg(v)$ for all $v$ in $V$
- - $N(u)$ = neighbourhood of $u$
+ - $N(u)$ = neighbourhood of $u$, that is, the vertices connected to $u$ by an edge
  - $n$ = $|V|$, i.e., the number of vertices
  - $m$ = $|E|$, i.e., the number of edges
 
@@ -46,8 +46,8 @@ Notations:
 
  - $out-deg(u)$ = number of arcs out from a vertex $u$ i.e., number of arcs $(u, *)$ where $*$ is any adjoining vertex
  - $in-deg(u)$ = number of arcs into a vertex $u$ i.e., number of arcs $(*, u)$ where $*$ is any adjoining vertex
- - $N^{out}(u)$ = out neighbourhood of $u$
- - $N^{in}(u)$ = in neighbourhood of $u$
+ - $N^{out}(u)$ = out neighbourhood of $u$, the vertices $v$ where there is an arc $(u, v)$
+ - $N^{in}(u)$ = in neighbourhood of $u$, the vertices $v$ where there is an arc $(v, u)$
 
 ## Graph Connectivity
 ### Graph Paths
@@ -70,3 +70,38 @@ This can be considered equivalent to the graph being connected and having one le
 That is, if we let $G=(V,E)$ then $G$ is a tree if $G$ is connected and $|E|=|V|-1$.
 
 ## Exploring Graphs
+### Breadth First Search
+Starting at a given node (usually the root for a tree), each child node is compared to the goal.
+Then for each node compared each child node is expanded and thus its children are compared to the goal.
+This is repeated until the goal is reached.
+
+### Depth First Search
+Again starting from a given node (usually the root for a tree) the first child node is compared to the goal.
+The given node's child is then compared to the goal.
+This is repeated recursively until a node without any children is reached.
+Once this occurs the node's ancestors are recursively checked for more children and then they are recursively expanded.
+
+A DFS of a graph will form a collection of trees known as a forest.
+An undirected graph is connected if and only if we end up with a single tree in the forest.
+
+## Graph Representations
+### Adjacency Matrix
+An adjacency matrix is a $|V|$ by $|V|$ matrix $M$ where $M[i][j]$ represents the edge $(u_i, u_j)$.
+For an unweighted graph if the edge $(u_i, u_j)$ exists then $M[i][j]$ is 1, if it does not exists it is 0.
+
+An undirected graph is symmetric about the diagonal of the matrix.
+For weighted graphs we can give the weight of edge $(u_i, u_j)$ by giving $M[i][j]$ the value of the edge weight.
+
+An adjacency matrix takes $\Theta(|V|^2)$ space and takes $O(1)$ time to check if an edge exists.
+
+### Adjacency List
+For each vertex $v$ we have a list of all the vertices that form an edge with the vertex $v$.
+
+An adjacency list takes up $\Theta(|E| + |V|)$ space and $O(min(N(u),) n(v))$ time to check if an edge $(u, v)$ exists.
+
+## Graph Algorithms
+### Cut Edges
+A cut edge is one such that when the edge is removed from a connected subgraph the subgraph becomes unconnected.
+
+### Cut Vertices
+A cut vertex is an edge such that when the vertex is removed from a connected graph the graph becomes unconnected.
